@@ -1,0 +1,26 @@
+[
+  {
+    "id": "b_ClosedHH_909_1_wav",
+    "file": "media/ClosedHH 909 1.wav"
+  },
+  {
+    "id": "b_Kick_909_4_wav",
+    "file": "media/Kick 909 4.wav"
+  },
+  {
+    "id": "b_OpenHH_909_1_wav",
+    "file": "media/OpenHH 909 1.wav"
+  },
+  {
+    "id": "b_Snare_909_8_wav",
+    "file": "media/Snare 909 8.wav"
+  },
+  {
+    "id": "b_Ride_909_wav",
+    "file": "media/Ride 909.wav"
+  },
+  {
+    "id": "b_Clap_909_wav",
+    "file": "media/Clap 909.wav"
+  }
+]
