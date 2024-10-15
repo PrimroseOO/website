@@ -6,44 +6,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="/img/favicon.png" sizes="128x128">
-        <style>
-
-            * {
-
-              font-family: cormorant;
-              
-            }
-            
-            header {
-              background-image: url('desktop.png');
-              background-size: cover;
-            }
-
-            @keyframes blink{
-
-              0%, 100% { 
-                background-color: none;
-                color: black;
-              } 
-              50% {
-                background-color: red;
-                color: white;
-              }
-
-            }
-
-            .blinker {
-
-              animation: blink 1s infinite;
-
-            }
-
-        </style>
+        <link rel="stylesheet" href="style/style.css">
     </head>
 
     <body>
-        <header>Primrose Ohling</header>
-        <p><a href="/testRNBOweb/index.html">web based drum machine test</a></p>
+      <div id="header">
+        <header class="header"><span>Primrose Ohling</span></header>
+        <div class="header"></div>
+        <div class="header blink"><a href="index.html" class="no_stipple">HOME</a></div>
+      </div>
+      <br>
+
+
+      <a href="/testRNBOweb/index.html" class="no_stipple blink">web based drum machine test</a>
     </body>
 
 </html>

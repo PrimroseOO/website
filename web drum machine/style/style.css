@@ -1,23 +1,39 @@
 html, body {
+
     margin: 0;
     padding: 0;
+    background-image: url('../img/background-stipple.png');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+
+
+
 }
+
+
+
+
 #rnbo-root {
     height: 100vh;
     width: 100vw;
+    background:none;
+
+
+
+
 }
-#background {
-    position: absolute;
-    z-index: -1;
-}
+
 
 h2, em {
     width: 100%;
+    
 }
 
 #rnbo-root {
     margin: auto;
     max-width: 700px;
+    
+
 }
 
 #rnbo-clickable-keyboard {
@@ -76,6 +92,7 @@ button {
 #sequencer {
 
     margin-top: 6px;
+    margin-bottom: 10px;
     display: grid; /* Enable grid layout */
     grid-template-columns: repeat(17, 1fr); /* 16 equal columns */
     grid-template-rows: repeat(6, 30px);   /* 6 rows with a height of 100px each */
@@ -98,5 +115,75 @@ button {
     color: black;
     
     
+
+}
+
+#header span{
+
+    background-color: #E6F0FF;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}
+
+#header {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; 
+    margin-top: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+               
+      
+}
+
+.header:nth-child(1) {
+    text-align: left;
+}
+.header:nth-child(2) {
+    text-align: center;
+}
+.header:nth-child(3) {
+    text-align: right;
+}
+
+.no_stipple {
+    background-color: #E6F0FF;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+@keyframes blink{
+    0%, 100% {
+        color: black;
+    }
+    50% {
+        color: #668DFF;
+    }
+}
+
+a {
+
+    animation: blink 2s steps(1) infinite;
+    font-size: 18px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+a:active {
+
+    animation:none;
+    color: orange;
+
+}
+
+
+a:hover{
+
+    background-color: #fff0e6;
 
 }
