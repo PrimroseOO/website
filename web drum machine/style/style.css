@@ -125,6 +125,7 @@ button {
     padding-right: 10px;
     padding-top: 2px;
     padding-bottom: 2px;
+    border: 2.5px dashed #ABBFFF;
 
 }
 
@@ -135,17 +136,14 @@ button {
     gap: 10px; 
     margin-top: 8px;
     margin-left: 8px;
-    margin-right: 8px;
-               
+    margin-right: 8px;     
       
 }
 
 .header:nth-child(1) {
     text-align: left;
 }
-.header:nth-child(2) {
-    text-align: center;
-}
+
 .header:nth-child(3) {
     text-align: right;
 }
@@ -154,6 +152,7 @@ button {
     background-color: #E6F0FF;
     padding-left: 10px;
     padding-right: 10px;
+    border: 2.5px outset #ABBFFF;
 }
 
 @keyframes blink{
