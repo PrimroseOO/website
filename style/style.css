@@ -29,6 +29,7 @@ header div:nth-child(1) {
 
 header div:nth-child(3) { text-align: right; }
 
+
 @keyframes linkBlink{
 
     0%, 100% { color: black; }
