@@ -1,28 +1,23 @@
 html, body {
 
-    margin: 0;
-    padding: 0;
+
+
     background-image: url('../img/background-stipple.png');
     background-repeat: repeat;
     background-size: 100px 100px;
+    font-weight: 500;
 
 
 
 }
 
-
-
-
 #rnbo-root {
+
     height: 100vh;
     width: 100vw;
     background:none;
 
-
-
-
 }
-
 
 h2, em {
     width: 100%;
@@ -36,26 +31,6 @@ h2, em {
 
 }
 
-#rnbo-clickable-keyboard {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#rnbo-clickable-keyboard > div {
-    margin: 2px;
-    border: solid black 1px;
-    min-height: 50px;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#rnbo-clickable-keyboard > div.clicked {
-    background: #222222;
-    color: #dddddd;
-}
-
 #rnbo-parameter-sliders {
     display: flex;
     flex-direction: column;
@@ -67,13 +42,6 @@ h2, em {
 
 #rnbo-parameter-sliders > div > input:first-of-type {
     flex-grow: 1;
-}
-
-@keyframes blink {
-
-    0%, 100% {background-color: #aaaaaa}
-    50% {background-color: #cccccc}
-
 }
 
 button {
@@ -118,71 +86,56 @@ button {
 
 }
 
-#header span{
-
-    background-color: #E6F0FF;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    border: 2.5px dashed #ABBFFF;
-
+@keyframes blink{
+    50% {
+        background-color: #cccccc;
+    }
+    0%, 100% {
+        background-color: #668DFF;
+    }
 }
 
-#header {
+
+* { font-family: cormorant; }
+
+
+header {
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px; 
-    margin-top: 8px;
-    margin-left: 8px;
-    margin-right: 8px;     
-      
+    margin-bottom: 20px;   
+        
 }
 
-.header:nth-child(1) {
-    text-align: left;
-}
+header div:nth-child(1) {
 
-.header:nth-child(3) {
-    text-align: right;
-}
-
-.no_stipple {
+    padding: 0px 6px;
+    border: 2.5px dashed #ABBFFF;
     background-color: #E6F0FF;
-    padding-left: 10px;
-    padding-right: 10px;
-    border: 2.5px outset #ABBFFF;
+    text-align: left;
+    width: fit-content;
+
 }
 
-@keyframes blink{
-    0%, 100% {
-        color: black;
-    }
-    50% {
-        color: #668DFF;
-    }
+header div:nth-child(3) { text-align: right; }
+
+
+@keyframes linkBlink{
+
+    0%, 100% { color: black; }
+    50% { color: #668DFF; }
+
 }
 
 a {
 
-    animation: blink 2s steps(1) infinite;
-    font-size: 18px;
-    padding-left: 10px;
-    padding-right: 10px;
+    animation: linkBlink 2s steps(1) infinite;
+    padding: 0px 6px;
+    border: 2.5px outset #ABBFFF;
+    background-color: #E6F0FF;
 
 }
 
-a:active {
+a:active { animation:none; color: orange; }
 
-    animation:none;
-    color: orange;
-
-}
-
-
-a:hover{
-
-    background-color: #fff0e6;
-
-}
+a:hover { background-color: #fff5e6; }
