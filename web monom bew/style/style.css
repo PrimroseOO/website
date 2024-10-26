@@ -1,0 +1,40 @@
+#grid-container {
+    margin: 30px;
+    height: 300px;
+    width: 93%;
+    background-color: #555555;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+
+
+
+}
+
+#grid-container > *  {
+
+    border: solid gray 0.5px;
+
+}
+
+body {
+
+    background-image: url('../../img/stippling-7.png');
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    font-weight: 500;
+
+}
+
+header {
+    margin: 30px 30px 10px;
+}
+
+code {
+
+    color: crimson;
+    background-color: #e1e1e1;
+    padding: 2px;
+    font-size: 105%;
+  }
+
