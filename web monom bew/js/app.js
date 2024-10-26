@@ -7,7 +7,7 @@ const grid_Y = 8;
 function setup() {
 
     //setup is called clear console and print
-    //console.clear();
+
     console.log("setup called")
 
     //creates all div in grid-container
