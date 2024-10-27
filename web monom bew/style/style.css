@@ -1,7 +1,7 @@
 #grid-container {
     margin: 30px;
     height: 300px;
-    width: 93%;
+    width: 600px;
     background-color: #555555;
     color: white;
     display: grid;
@@ -17,14 +17,6 @@
 
 }
 
-body {
-
-    background-image: url('../../img/stippling-7.png');
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    font-weight: 500;
-
-}
 
 header {
     margin: 30px 30px 10px;
