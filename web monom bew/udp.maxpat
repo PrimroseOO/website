@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 154.0, 300.0, 712.0, 707.0 ],
+		"rect" : [ 40.0, 311.0, 712.0, 707.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -103,8 +103,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 77.0, 362.0, 83.0, 22.0 ],
-					"text" : "/sys/info 6666"
+					"patching_rect" : [ 60.0, 334.0, 136.0, 22.0 ],
+					"text" : "/sys/info 127.0.0.1 6666"
 				}
 
 			}

@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 FiraCode-Regular;}
+{\colortbl;\red255\green255\blue255;\red193\green191\blue181;\red0\green0\blue0;\red255\green255\blue255;
+\red193\green191\blue181;\red236\green139\blue96;\red253\green199\blue95;\red204\green255\blue108;\red216\green175\blue255;
+\red252\green156\blue82;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c80000\c79216\c76078;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c100000\c0;
+\cssrgb\c80139\c79348\c76010;\cssrgb\c94816\c61796\c45087;\cssrgb\c99749\c81622\c44509;\cssrgb\c83306\c99723\c49669;\cssrgb\c87832\c75302\c100000;
+\cssrgb\c99802\c67548\c39455;\cssrgb\c0\c1\c1;}
+\margl1440\margr1440\vieww35340\viewh22100\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+
+\fs48 [x] start websocket server to html app.js\
+\
+[x] on websocket client connection\
+	[x] store websocket connection\
+	[x] attach listener for messages from client\
+\
+[x] init and open main osc.UPDPort to local network\
+\
+[x] handle messages from local server\
+	[x] sort /sys messages\
+	[x] send /monome messages to websocket server\
+\
+[x] handle messages from websocket server\
+	[x] init sys_osc_Port and close when done\
+	[x] clean up\
+\
+change so that port is not closed in init but elsewhere maybe or maybe leave it open\
+\
+[ ] how to handle /sys/info\
+\
+[ ] /sys/prefix move to node server\
+\
+\
+\
+app.js\
+\
+[ ] connect to websocket server\
+\
+[ ] send request for needed system info?\
+\
+[ ] create grid of divs\
+	[ ] attach onclick event listeners\
+\
+[ ] handle received messages\
+\
+[ ] /monome message functions\
+\
+[ ] how to handle /sys/info\
+\
+[ ] send messages to websocket server
+\fs24 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \cb4 \
+\
+\cf2 \cb1 \
+\cf3 \cb4 let a  = 0;\
+let b = 10\
+\
+c.values = [a, b];\
+d.values = \{a, b\};
+\fs48 \cf3 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf3 \expnd0\expndtw0\kerning0
+ws_Server\cf3 .\cf3 on\cf3 (\cf3 'connection'\cf3 , (\cf3 ws\cf3 ) \cf3 =>\cf3  \{\
+    ws_Stream \cf3 =\cf3  \cf3 ws\cf3 ;\
+\
+\});\
+\
+if (a != b || c != d) \{\
+	\cf11 console.log(\'93if\'94)\cf3 \
+\} else \{\
+	console.log(\'93else\'94)\
+\}\cf2 \cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs48 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\fs24 \cf2 \expnd0\expndtw0\kerning0
+\
+ }
