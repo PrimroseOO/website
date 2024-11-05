@@ -95,6 +95,15 @@ button {
     }
 }
 
+@keyframes transport_Blink{
+    50% {
+        background-color: #cccccc;
+    }
+    0%, 100% {
+        background-color: #ABBFFF;
+    }
+}
+
 
 * { font-family: cormorant; }
 

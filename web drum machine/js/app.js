@@ -239,7 +239,7 @@ function makeInportForm(device) {
                         const ms = 60000/tempo;
                         box.style.animation = "none";
                         void box.offsetWidth;
-                        box.style.animation = "blink " + ms + "ms steps(1) infinite";
+                        box.style.animation = "transport_Blink " + ms + "ms steps(1) infinite";
 
                     } else if (box.innerText == "stop") {
                         box.innerText = "start";
@@ -264,24 +264,24 @@ function makeInportForm(device) {
 
                 
                 
-                for (let i = 0; i < 6; i ++) {
+                for (let i = 0; i < 6; i++) {
 
                     const instrument = document.createElement("div");
                     sequencer.appendChild(instrument);
                     instrument.classList.add("instrument")
                     instrument.style.backgroundColor = "#aaaaaa";
 
-                    if (i == 0) {
+                    if (i == 5) {
                         instrument.innerText = "kick";
-                    } else if (i == 1) {
-                        instrument.innerText = "snare";
-                    } else if (i == 2) {
-                        instrument.innerText = "clap";
-                    } else if (i == 3) {
-                        instrument.innerText = "HH";
                     } else if (i == 4) {
+                        instrument.innerText = "snare";
+                    } else if (i == 3) {
+                        instrument.innerText = "clap";
+                    } else if (i == 2) {
+                        instrument.innerText = "HH";
+                    } else if (i == 1) {
                         instrument.innerText = "OH";
-                    } else if (i == 5) {
+                    } else if (i == 0) {
                         instrument.innerText = "ride";
                     }
                     
@@ -312,13 +312,13 @@ function makeInportForm(device) {
                             if (stepSequencer.classList.contains("0")) {
 
                                 if (j % 4 == 0) {
-                                    stepSequencer.style.backgroundColor = "#DD3333";
+                                    stepSequencer.style.backgroundColor = "#ABBFFF";
                                 } else if (j % 4 != 0) {
-                                    stepSequencer.style.backgroundColor = "#DD6666"; 
+                                    stepSequencer.style.backgroundColor = "#E6F0FF"; 
                                 }
                                 stepSequencer.classList.replace("0", "1");
 
-                                const sequence = [i, j, 1];
+                                const sequence = [Math.abs(i - 5), j, 1];
                                 console.log(sequence);
                                 let sequenceMessage = new RNBO.MessageEvent(RNBO.TimeNow, inport.tag, sequence);
                                 device.scheduleEvent(sequenceMessage);
@@ -327,13 +327,13 @@ function makeInportForm(device) {
                             } else if (stepSequencer.classList.contains("1")) {
 
                                 if (j % 4 == 0) {
-                                    stepSequencer.style.backgroundColor = "aaaaaa";
+                                    stepSequencer.style.backgroundColor = "#AAAAAA";
                                 } else if (j % 4 != 0) {
-                                    stepSequencer.style.backgroundColor = "cccccc"; 
+                                    stepSequencer.style.backgroundColor = "#CCCCCC"; 
                                 }
                                 stepSequencer.classList.replace("1", "0");
 
-                                const sequence = [i, j, 0];
+                                const sequence = [Math.abs(i - 5), j, 0];
                                 let sequenceMessage = new RNBO.MessageEvent(RNBO.TimeNow, inport.tag, sequence);
                                 device.scheduleEvent(sequenceMessage);
 

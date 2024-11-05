@@ -1,10 +1,17 @@
 let canvas;
-let prevWidth = window.innerWidth;
-let prevHeight = window.innerHeight;
+
+//let prevWidth = window.innerWidth;
+//let prevHeight = window.innerHeight;
+
+let prevWidth = document.body.scrollWidth + 10;
+let prevHeight = document.body.scrollHeight + 100;
 
 function setup() {
 
-    canvas = createCanvas(windowWidth, windowHeight); 
+    console.log("window inner", window.innerWidth, window.innerHeight)
+    console.log("client", document.body.scrollWidth, document.body.scrollHeight)
+    
+    canvas = createCanvas(prevWidth, prevHeight); 
     canvas.position(0, 0); 
     canvas.style('z-index', '-1');
     background(0,0,0,0)
@@ -90,14 +97,18 @@ function drawTextbox() {
 
 function windowResized() {
 
-    let currentWidth = window.innerWidth;
-    let currentHeight = window.innerHeight;
+    //let currentWidth = document.body.clientWidth;
+    //let currentHeight = document.body.clientHeight;
+    let currentWidth = document.body.scrollWidth;
+    let currentHeight = document.body.scrollHeight;
 
     if (currentWidth !== prevWidth || currentHeight !== prevHeight) {
         setup();
     }
 
-    prevWidth = currentWidth;
-    prevHeight = currentHeight;
+    prevWidth = currentWidth + 10;
+    prevHeight = currentHeight + 100;
 
 }
+
+
