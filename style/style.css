@@ -30,7 +30,12 @@ header div:nth-child(1) {
 
 }
 
-header div:nth-child(3) { text-align: right; }
+header div:nth-child(3) {
+
+    text-align: right;
+    margin-top: 2.5px;
+
+}
 
 
 @keyframes linkBlink{
@@ -60,6 +65,7 @@ a:hover { background-color: #fff5e6; }
     grid-template-columns: 1.68fr 0.95fr;
     gap: 25px;
 
+
 }
 
 .content-div div {
@@ -68,6 +74,7 @@ a:hover { background-color: #fff5e6; }
     padding: 10px 13px;
     width: fit-content;
 
+
 }
 
 .content-div a {
@@ -75,6 +82,15 @@ a:hover { background-color: #fff5e6; }
     border: none;
     padding: 1px;
 
+}
+
+.pe7 {
+
+    display: block;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 
