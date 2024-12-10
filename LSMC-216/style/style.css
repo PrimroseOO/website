@@ -1,0 +1,143 @@
+html, body {
+    margin: 0;
+    padding: 0;
+
+    /* added these lines for the background */
+    background-image: url('/img/background-stipple.png');
+    background-repeat: repeat;
+    background-size: 100px 100px;
+}
+#rnbo-root {
+    height: 100vh;
+    width: 100vw;
+}
+#background {
+    position: absolute;
+    z-index: -1;
+}
+h2, em {
+    width: 100%;
+}
+#rnbo-root {
+    margin: auto;
+    max-width: 540px;
+}
+
+/* added most everything below piggy backing on the #rnbo stuff */
+#title-bar > * {
+    display: grid;
+    margin: 8px 0px;
+    justify-content: center;
+}
+
+#rnbo-parameter-sliders {
+
+    display: flex;
+    flex-direction: column;
+    margin: 13px 0px 20px;
+
+}
+
+#rnbo-parameter-sliders > div {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    padding: 4px;
+
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #8F8F9D;
+
+    background-color: #E9E9ED;
+
+}
+
+#rnbo-parameter-sliders > div > input[type=range] {
+
+    flex-grow: 1;
+    border-radius: 10px;   
+    appearance: none;
+
+}
+#rnbo-parameter-sliders > div > input[type=range]::-webkit-slider-thumb {
+
+    border-radius: 10px;   
+    cursor: pointer;
+
+}
+
+#rnbo-parameter-sliders > div > input[type=text] {
+
+    max-width: 60px;
+    margin-left: 5px;
+
+}
+
+#rnbo-parameter-sliders > div > label {
+
+    min-width: 120px;
+    margin-left: 5px;
+
+}
+
+#rnbo-parameter-sliders > div:nth-child(5) > label { color: red; }
+
+#cc_Map {
+
+    display: flex;
+    justify-content: center;
+    margin: 4px auto 0px;
+    width: 50%;
+    height: 30px;
+
+}
+
+select { margin-right: 10px; }
+
+#cc_Map > div {
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 30px;
+    height: 28px;
+
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #8F8F9D;
+
+    background-color: #E9E9ED;
+
+    cursor: default;
+
+}
+
+#cc_Map > div:hover { background-color: #DD5555; }
+
+#cc_Map > div:active { background-color: red; }
+
+#add {
+
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: 10px auto 0px;
+    width: 10%;
+    height: 30px;
+
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #8F8F9D;
+
+    background-color: #E9E9ED;
+
+}
+
+#add:hover { background-color: green; }
+
+#add:active { background-color: lightgreen; }
