@@ -13,7 +13,7 @@ function setup() {
 
 function draw_Textbox() {
    
-    let elements = document.querySelectorAll(".content-div div");
+    let elements = document.querySelectorAll(".content-div");
       
     elements.forEach((element) => {
 
