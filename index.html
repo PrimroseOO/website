@@ -6,7 +6,24 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="/img/favicon.png" sizes="128x128">
-        <link rel="stylesheet" href="style/temp.css">
+        <link rel="stylesheet" href="style/style.css">
+
+        <script>
+          // Stub out the DeviceMotionEvent handler if it's not needed
+          window.DeviceMotionEvent = window.DeviceMotionEvent || {};
+          DeviceMotionEvent.requestPermission = () => Promise.reject("Not needed");
+        
+          // Block addEventListener for 'devicemotion' and 'deviceorientation'
+          const origAddEventListener = window.addEventListener;
+          window.addEventListener = function(type, listener, options) {
+            if (type === 'devicemotion' || type === 'deviceorientation') {
+              // Block it
+              console.log(`Blocked listener for: ${type}`);
+              return;
+            }
+            return origAddEventListener.call(this, type, listener, options);
+          };
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
         <script src="/js/p5/textbox-background.js" defer></script>
     </head>
