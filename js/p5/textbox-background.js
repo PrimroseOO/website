@@ -1,14 +1,29 @@
 let canvas;
-let prev_Width = document.body.scrollWidth + 10;
-let prev_Height = document.body.scrollHeight + 100;
+let prev_Width, prev_Height;
 
 function setup() {
+  prev_Width = window.innerWidth;
+  prev_Height = window.innerHeight;
+  canvas = createCanvas(window.innerWidth, document.body.scrollHeight + 100);
+  canvas.position(0, 0);
+  canvas.style("z-index", "-1");
+  noLoop();
+  clear();
+  draw_Textbox();
+}
 
-    canvas = createCanvas(prev_Width, prev_Height); 
-    canvas.position(0, 0); 
-    canvas.style("z-index", "-1");
-    background(0,0,0,0);
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) setup();
+});
+
+function windowResized() {
+  if (window.innerWidth !== prev_Width || window.innerHeight !== prev_Height) {
+    prev_Width = window.innerWidth;
+    prev_Height = window.innerHeight;
+    resizeCanvas(window.innerWidth, document.body.scrollHeight + 100);
+    clear();
     draw_Textbox();
+  }
 }
 
 function draw_Textbox() {
@@ -79,15 +94,15 @@ function draw_Textbox() {
     }
 }
 
-function windowResized() {
+// function windowResized() {
 
-    let current_Width = document.body.scrollWidth;
-    let current_Height = document.body.scrollHeight;
+//     let current_Width = document.body.scrollWidth;
+//     let current_Height = document.body.scrollHeight;
 
-    if (current_Width !== prev_Width || current_Height !== prev_Height) setup();
+//     if (current_Width !== prev_Width || current_Height !== prev_Height) setup();
 
-    prev_Width = current_Width + 10;
-    prev_Height = current_Height + 100;
-}
+//     prev_Width = current_Width + 10;
+//     prev_Height = current_Height + 100;
+// }
 
 

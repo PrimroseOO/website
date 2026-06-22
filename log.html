@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>primrose ohling</title>  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/img/favicon.png" sizes="128x128">
+        <link rel="stylesheet" href="style/style.css">
+
+        <script>
+          // Stub out the DeviceMotionEvent handler if it's not needed
+          window.DeviceMotionEvent = window.DeviceMotionEvent || {};
+          DeviceMotionEvent.requestPermission = () => Promise.reject("Not needed");
+        
+          // Block addEventListener for 'devicemotion' and 'deviceorientation'
+          const origAddEventListener = window.addEventListener;
+          window.addEventListener = function(type, listener, options) {
+            if (type === 'devicemotion' || type === 'deviceorientation') {
+              // Block it
+              console.log(`Blocked listener for: ${type}`);
+              return;
+            }
+            return origAddEventListener.call(this, type, listener, options);
+          };
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="/js/p5/textbox-background.js" defer></script>
+    </head>
+
+    <body>
+      <header id="header">
+        <div><a href="/index.html">HOME</a></div>
+        <div></div>
+        <div><a href="/html/music-main.html" style="margin-left: 5px;">MUSIC</a></div>
+      </header>
+
+      <div class="content-div">
+        I added thesse text boxes! they're made in p5.js and drawn on screen rather than using an image. resolution will never be an issue. I wonder if it will affect performance and if it will work on mobile.<br><br>
+
+        here is the link to the rnbo web <a href="/html/web drum machine.html">drum machine</a><br><br>
+
+        I've updated some of the css for the drum machine but theres still more I should do with it.<br><br>
+
+        the background stippling was also made in p5 but its an image that I exported. its only 400 x 400 pixels but its tiled. I think thats more efficient than running more p5 code. its only 5kb.<br>
+
+        <a href="/html/stipple-p5.html">p5.js for the background stippling</a> and a little more<br><br>
+        if you dig around a little you can find some other background images or you could just go to <a href="https://github.com/PrimroseOO/website">my github</a><br><br>
+
+        <b style="font-size: 15pt;" ><i>2024 oct 26 02:59</i></b><br>
+        I'm working on a monome that will work in browser. I'm not sure if I can get the SerialOsc beap object to recognize the browser as a device. The way it works right now is a web socket sends messages to a node.js server in terminal which sends udp that max receives with the udpreceive object. I would like to get rid of the node.js server but I'm not sure how.<br><br>
+        I've been working through <a href="https://monome.org/docs/serialosc/osc/">this osc reference</a>. all thats left is the map message and /sys/info message. then I need to decide on whether I add degrees and variable brightness.<br><br>
+
+        <b style="font-size: 15pt;" ><i>2024 oct 28 15:25</i></b><br>
+        I created a pdf to show how <a href="https://drive.google.com/file/d/1KYcu_2D_Uz29PYgdEFsWBatxCPP9HeAV/view?usp=share_link">rnbo~ presets</a> work<br><br>
+
+        <b style="font-size: 15pt;" ><i>2024 nov 5 12:56</i></b><br>
+        I fixed the textbox canvas size when the window is resized, removed web monome bew, and adjusted some styling of the drum machine. I can see that the header elements aren't level with each other. I need to figure out why. The textbox on the right sometimes gets cutoff when resizing the window, I'm not sure why.<br><br>
+
+        <b style="font-size: 15pt;" ><i>2024 nov 6 00:46</i></b><br>
+        I added a video, made tonight in jitter, to the music page. I am still working on a name for pe.16. its going to be on my self titled album. I'm working on a page for this upcoming album.<br><br>
+
+        <a href="LSMC-216/index.html">web synth v1</a>
+
+        <md href="temp.md"></md>
+
+      </div> 
+    </body>
+
+
+</html>

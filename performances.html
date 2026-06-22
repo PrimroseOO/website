@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>primrose ohling</title>  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/img/favicon.png" sizes="128x128">
+        <link rel="stylesheet" href="style/style.css">
+
+        <script>
+          // Stub out the DeviceMotionEvent handler if it's not needed
+          window.DeviceMotionEvent = window.DeviceMotionEvent || {};
+          DeviceMotionEvent.requestPermission = () => Promise.reject("Not needed");
+        
+          // Block addEventListener for 'devicemotion' and 'deviceorientation'
+          const origAddEventListener = window.addEventListener;
+          window.addEventListener = function(type, listener, options) {
+            if (type === 'devicemotion' || type === 'deviceorientation') {
+              // Block it
+              console.log(`Blocked listener for: ${type}`);
+              return;
+            }
+            return origAddEventListener.call(this, type, listener, options);
+          };
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="/js/p5/textbox-background.js" defer></script>
+    </head>
+
+    <body>
+      <header id="header">
+        <div><a href="/index.html">HOME</a></div>
+        <div><a href="/performances.html">PERFORMANCES</a></div>
+        <div><a href="/recordings.html">RECORDINGS</a></div>
+        <div><a href="/builds.html">BUILDS</a></div>
+        <!-- <div><a href="/html/music-main.html" style="margin-left: 5px;">MUSIC</a></div> -->
+      </header>
+
+      <div class="content-div">
+        <!-- <h3>Coming up...</h3> -->
+        <h4 style="margin: 0px;">Past Performances:</h4>
+        <ul style="margin: 6px;">
+          <li>2026 Sunder Performance and Demo, Computer History Museum, Mountain View, CA</li>
+          <li>2026 Vital Energy, Grand Rapids, MI (Saxophone)</li>
+          <li>2026 Inorganic Organ Transmutation, Grand Rapids, MI (Modular)</li>
+          <li>2026 All I Need is Love and Money, and I’ve Got Neither, Grand Rapids, MI</li>
+          <li>2026 Rock, Roll, Laugh, Cry, Rinse, Repeat, Grand Rapids, MI (Saxophone)</li>
+          <li>2026 The Sound of One Hand Clapping in a Virtual Acoustic, Grand Rapids, MI (Modular)</li>
+          <li>2026 Tourmaline Orchid, School’s Out Blowout, Stanford, CA (Modula)</li>
+          <li>2026 <a class="inline-link" href="https://youtu.be/_-tCywcy4eo?si=sScl_HpmraNRVx-n">It’s been a while!</a> Stanford, CA (Modular)</li>
+          <li>2026 Tourmaline Orchid, Rains Housing Limits, Stanford, CA (Modular)</li>
+          <li>2026 Tourmaline Orchid, Stanford Battle of the Bands, Stanford, CA (Modular)</li>
+          <li>2026 Tourmaline Orchid, The Arbor, Stanford, CA (Modular)</li>
+          <li>2026 Tourmaline Orchid, Music 106 Final Concert, CCRMA, Stanford, CA (Modular)</li>
+          <li>2026 <a class="inline-link" href="https://vimeo.com/1169446331?share=copy&fl=cl&fe=ci">The Modular ORKestra Presents: The Rise of MORK</a>, Stanford, CA (Modular & VCV Rack)</li>
+          <li>2026 <a class="inline-link" href="https://youtu.be/Ph-DUeaAnE0?si=T1Yhg6M-2lJnkFua">Font Memory Enchant Me</a>, Bing Studio - Stanford, CA (Saxophone & Modular) - 8ch</li>
+          <li>2025 The Rockwell - Boston, MA (open for Sharpie Smile)</li>
+        </ul>
+
+      </div> 
+
+      <footer id="header">
+        <div><a href="https://www.youtube.com/@primroseohling">YOUTUBE</a></div>
+        <div><a href="https://primroseohling.bandcamp.com/">BANDCAMP</a></div>
+        <div><a href="https://soundcloud.com/primroseohling">SOUNDCLOUD</a></div>
+        <div><a href="https://www.instagram.com/primroseohling">INSTAGRAM</a></div>
+        <!-- <div><a href="/html/music-main.html" style="margin-left: 5px;">MUSIC</a></div> -->
+      </footer>
+
+    </body>
+
+
+</html>
