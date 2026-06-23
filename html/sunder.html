@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Primrose Ohling</title>  
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/img/favicon.png" sizes="128x128">
+        <link rel="stylesheet" href="../style/style.css">
+        <script>
+          // Stub out the DeviceMotionEvent handler if it's not needed
+          window.DeviceMotionEvent = window.DeviceMotionEvent || {};
+          DeviceMotionEvent.requestPermission = () => Promise.reject("Not needed");
+        
+          // Block addEventListener for 'devicemotion' and 'deviceorientation'
+          const origAddEventListener = window.addEventListener;
+          window.addEventListener = function(type, listener, options) {
+            if (type === 'devicemotion' || type === 'deviceorientation') {
+              // Block it
+              console.log(`Blocked listener for: ${type}`);
+              return;
+            }
+            return origAddEventListener.call(this, type, listener, options);
+          };
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="/js/p5/textbox-background.js" defer></script>
+    </head>
+
+    <body>
+      <header id="header">
+        <div><a href="../index.html">HOME</a></div>
+        <div><a href="../performances.html">PERFORMANCES</a></div>
+        <div><a href="../recordings.html">RECORDINGS</a></div>
+        <div><a href="../builds.html">BUILDS</a></div>
+      </header>
+
+      <div class="content-div">
+        Sunder is inspired by the Buchla Thunder which is a MIDI touch controller. 
+        Sunder uses 25 capacitive sensing pads to generate MIDI data. 
+        It's built on a Bela Trill Craft and a Teensy 4.0. 
+        The Teensy can be reprogramed to send different CC's and process the sensing data in different ways. 
+        The current version calculates the centroid position X, Y, spread, and overall surface area touched (sort of pressure). 
+        Becuase Sunder uses 25 individual pads it is possible to do multi-touch and gesture recognition. 
+        Although there is a limit to what can be done on the Teensy so each pad is sent out as it's own CC as well. 
+        A PCB isn't very nice to touch in general so a layer of silicone is glued to the surface. 
+        Silicone has a higher dielectric constant than air as well! 
+        Why does this matter? 
+        I tried to design the pads in a way to maximize surface area so that there would be some pre-sensing. 
+        It actually works to some extent, you can hover your hand over the entire box and begin to change values. 
+        The silicone also gives you something to push against which helps you get a better range or possibly response curve for the psuedo pressure values. 
+        I don't know that it actually helps but it seems to.
+        The wood box it is housed in was handmade by me! 
+        I took my time making everything square, rounding corners, and sanding. 
+        It's not perfect but it works great, feels great, and has a nice weight to it. 
+        (I may have glued a weight inside it) 
+      </div>
+      <div class="content-div">
+        <div class="img-wrapper">
+          <img src="../img/Sunder_PCB.png">
+        </div>
+      </div>
+      <div class="content-div">
+        <div class="img-wrapper">
+          <img src="../img/sunder-test-fit.jpg">
+        </div>
+      </div>
+      <div class="content-div">
+        <div class="img-wrapper">
+          <img src="../img/sunder-test-silicone.jpg">
+        </div>
+      </div>
+      <div class="content-div">
+        <div class="img-wrapper">
+          <img src="../img/sunder_finished.jpg">
+        </div>
+      </div>
+
+      <footer id="header">
+        <div><a href="https://www.youtube.com/@primroseohling">YOUTUBE</a></div>
+        <div><a href="https://primroseohling.bandcamp.com/">BANDCAMP</a></div>
+        <div><a href="https://soundcloud.com/primroseohling">SOUNDCLOUD</a></div>
+        <div><a href="https://www.instagram.com/primroseohling">INSTAGRAM</a></div>
+      </footer>
+    </body>
+</html>

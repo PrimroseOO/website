@@ -9,8 +9,11 @@ body{
     font-weight: 500;
     max-width: 1550px;
     margin: 0 auto;
+    font-size: 1rem;
 
 }
+
+
 
 :is(header,footer) {
 
@@ -26,6 +29,19 @@ body{
 :is(header,footer) div:not(:first-child) {
     margin-left: -3px; /* overlaps borders so tabs read as one strip */
 }
+
+@media (max-width: 768px) {
+  body, button {
+    font-size: 2rem;
+  }
+  :is(header,footer) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  :is(header,footer) div:nth-child(3) {
+    margin-left: 0px; /* overlaps borders so tabs read as one strip */
+  }
+}
+
 
 :is(header,footer) div {
 
@@ -96,6 +112,7 @@ button:hover {
     padding: 10px 13px;
     width: fit-content;
     margin: 10px auto 10px;
+    max-width: 700px;
 
 }
 
