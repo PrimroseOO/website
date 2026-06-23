@@ -13,8 +13,6 @@ body{
 
 }
 
-
-
 :is(header,footer) {
 
     display: grid;
@@ -49,8 +47,8 @@ button {
 
 @keyframes linkBlink{
 
-    50% { color: black; }
-    0%, 100% { color: #668DFF; }
+    0%, 100% { color: black; }
+    50% { color: #668DFF; }
 
 }
 
@@ -142,9 +140,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  body, button {
-    /* font-size: 1.25rem; */
-  }
   :is(header,footer) {
     grid-template-columns: repeat(2, 1fr);
     width: 90%;
