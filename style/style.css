@@ -30,19 +30,6 @@ body{
     margin-left: -3px; /* overlaps borders so tabs read as one strip */
 }
 
-@media (max-width: 768px) {
-  body, button {
-    font-size: 2rem;
-  }
-  :is(header,footer) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  :is(header,footer) div:nth-child(3) {
-    margin-left: 0px; /* overlaps borders so tabs read as one strip */
-  }
-}
-
-
 :is(header,footer) div {
 
     display: flex;
@@ -62,8 +49,8 @@ button {
 
 @keyframes linkBlink{
 
-    0%, 100% { color: black; }
-    50% { color: #668DFF; }
+    50% { color: black; }
+    0%, 100% { color: #668DFF; }
 
 }
 
@@ -108,7 +95,6 @@ button:hover {
 
 .content-div {
 
-    gap: 25px;
     padding: 10px 13px;
     width: fit-content;
     margin: 10px auto 10px;
@@ -119,7 +105,7 @@ button:hover {
 .content-div img {
 
     width: 100%;
-    height: 100%;
+    height: auto;
     max-width: 400px;
     border: 10px ridge #fff5e6;
     margin-top: 4px;
@@ -151,16 +137,27 @@ button:hover {
 
 }
 
-.pe7 {
-
-    display: block;
-    margin: 20px;
-    margin-left: auto;
-    margin-right: auto;
-    
-}
-
 footer {
     margin-top: 52px;
 }
 
+@media (max-width: 768px) {
+  body, button {
+    /* font-size: 1.25rem; */
+  }
+  :is(header,footer) {
+    grid-template-columns: repeat(2, 1fr);
+    width: 90%;
+    max-width: fit-content;
+  }
+  :is(header,footer) div:nth-child(3) {
+    margin-left: 0px; /* overlaps borders so tabs read as one strip */
+  }
+  .content-div {
+    max-width: fit-content;
+    width: 85%;
+  }
+  .content-div img{
+    width: calc(100% - 20px);
+  }
+}
