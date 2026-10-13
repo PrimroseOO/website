@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MixUp</title>
+        <meta property="og:title" content="MixUp">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="/img/favicon.png" sizes="128x128">
+        <link rel="stylesheet" href="../style/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+          // Stub out the DeviceMotionEvent handler if it's not needed
+          window.DeviceMotionEvent = window.DeviceMotionEvent || {};
+          DeviceMotionEvent.requestPermission = () => Promise.reject("Not needed");
+        
+          // Block addEventListener for 'devicemotion' and 'deviceorientation'
+          const origAddEventListener = window.addEventListener;
+          window.addEventListener = function(type, listener, options) {
+            if (type === 'devicemotion' || type === 'deviceorientation') {
+              // Block it
+              console.log(`Blocked listener for: ${type}`);
+              return;
+            }
+            return origAddEventListener.call(this, type, listener, options);
+          };
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="/js/p5/textbox-background.js" defer></script>
+    </head>
+
+    <body>
+      <header id="header">
+        <div><a href="/index.html">HOME</a></div>
+        <div><a href="/performances.html">PERFORMANCES</a></div>
+        <div><a href="/recordings.html">RECORDINGS</a></div>
+        <div><a href="/builds.html">BUILDS</a></div>
+      </header>
+
+      <div class="content-div">
+        I've been working on this panning tool for my own live performance practice. 
+        I wanted to be able to spatialize on 8 channel arrays. 
+        Currently it can handle anywhere from 2 to 8 channels and will update the visualization accordingly. 
+        I prefer to have copies of sounds processed and then sent through separate instances of MixUp. 
+        Each copy can then move around space independent of the others. 
+        You can also manually control the position and width in addition to the internal oscillator. 
+        I recently performed <a class="inline-link" href="https://www.youtube.com/watch?v=O_IZZ3xfalU">Will You Still Love Me At 63?</a> 
+        using 16 channels with several MixUps separated into two elevation layers of 8 speakers each. 
+        The files can be downloaded <a class="inline-link" href="/MixUp.zip">here</a>
+      </div>
+      <div class="content-div">
+        <div class="img-wrapper">
+          <img src="/img/MixUp.png">
+        </div>
+      </div>
+
+      <footer id="header">
+        <div><a href="https://www.youtube.com/@primroseohling">YOUTUBE</a></div>
+        <div><a href="https://primroseohling.bandcamp.com/">BANDCAMP</a></div>
+        <div><a href="https://soundcloud.com/primroseohling">SOUNDCLOUD</a></div>
+        <div><a href="https://www.instagram.com/primroseohling">INSTAGRAM</a></div>
+      </footer>
+    </body>
+</html>
